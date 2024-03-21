@@ -1,4 +1,5 @@
-import java.io.Serializable
+import Data.MovieResponse
+import com.google.gson.annotations.SerializedName
 
 data class Movie(
     val title: String,
@@ -8,5 +9,11 @@ data class Movie(
     val runtime: String,
     val director: String,
     val genres: List<String>,
-    val productionCountries: List<String>
-) : Serializable
+    val productionCountries: List<String>)
+
+
+data class MoviResponse(
+    @SerializedName("results")
+    val results:List<Movie>)
+
+

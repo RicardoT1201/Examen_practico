@@ -15,7 +15,7 @@ class MovieAdapter {
 
 }
 
-class MainActivity : AppCompatActivity(), MovieAdapter.MovieClickListener {
+class MainActivity : AppCompatActivity(), MovieAdapter.MovieClickListener() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var movieAdapter: MovieAdapter
@@ -37,8 +37,8 @@ class MainActivity : AppCompatActivity(), MovieAdapter.MovieClickListener {
             override fun onFailure(call: Call<MovieResponse>, t: Throwable) {
                 // Manejar el fallo de la llamada a la API
             }
-        })
+        }
     }
 
-    }
+
 
