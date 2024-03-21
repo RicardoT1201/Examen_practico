@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
             fun onResponse(call: Call<MovieResponse>, response: Response<MovieResponse>) {
                 val movies = response.body()?.results ?: emptyList()
                 movieAdapter = MovieAdapter(movies, this@MainActivity)
-                recyclerView.adapter = movieAdapter
+                //recyclerView.adapter = movieAdapter
             }
 
             fun onFailure(call: Call<MovieResponse>, t: Throwable) {
