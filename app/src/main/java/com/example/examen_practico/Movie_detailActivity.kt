@@ -1,11 +1,12 @@
+package com.example.examen_practico
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.examen_practico.R
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_movie_detail.*
 
 class MovieDetailActivity : AppCompatActivity() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -13,7 +14,7 @@ class MovieDetailActivity : AppCompatActivity() {
 
         val movie = intent.getSerializableExtra("movie") as Movie
 
-        titleTextView.text = movie.title
+        /*titleTextView.text = movie.title
         yearTextView.text = movie.releaseYear
         synopsisTextView.text = movie.overview
         durationTextView.text = "Duration: ${movie.runtime}"
@@ -22,6 +23,6 @@ class MovieDetailActivity : AppCompatActivity() {
         countryTextView.text = "Country: ${movie.country}"
 
         // Load poster image using Picasso
-        Picasso.get().load(movie.posterUrl).into(posterImageView)
+        Picasso.get().load(movie.posterUrl).into(posterImageView)*/
     }
 }

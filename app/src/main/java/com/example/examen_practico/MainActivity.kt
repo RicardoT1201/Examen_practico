@@ -1,3 +1,4 @@
+package com.example.examen_practico
 
 import Data.MovieResponse
 import android.os.Bundle
@@ -15,7 +16,7 @@ class MovieAdapter {
 
 }
 
-class MainActivity : AppCompatActivity(), MovieAdapter.MovieClickListener() {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var movieAdapter: MovieAdapter
