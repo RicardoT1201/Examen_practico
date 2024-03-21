@@ -5,14 +5,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.examen_practico.R
 import retrofit2.Call
 import retrofit2.Response
 
-class MovieAdapter {
-    open class MovieClickListener {
-
-    }
+class MovieAdapter(movies: List<Any>, mainActivity: MainActivity) {
 
 }
 
@@ -20,6 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var movieAdapter: MovieAdapter
+    open class MovieClickListener
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,14 +26,13 @@ class MainActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-            override fun onResponse(call: Call<MovieResponse>, response: Response<MovieResponse>) {
+            fun onResponse(call: Call<MovieResponse>, response: Response<MovieResponse>) {
                 val movies = response.body()?.results ?: emptyList()
                 movieAdapter = MovieAdapter(movies, this@MainActivity)
                 recyclerView.adapter = movieAdapter
             }
 
-            override fun onFailure(call: Call<MovieResponse>, t: Throwable) {
-                // Manejar el fallo de la llamada a la API
+            fun onFailure(call: Call<MovieResponse>, t: Throwable) {
             }
         }
     }
